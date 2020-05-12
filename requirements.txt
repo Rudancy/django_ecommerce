@@ -37,3 +37,4 @@ virtualenv-clone==0.5.4
 virtualenvwrapper==4.8.4
 wrapt==1.12.1
 zope.cachedescriptors==4.3.1
+django-forms-bootstrap==3.1.0
