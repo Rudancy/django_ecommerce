@@ -120,4 +120,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smpt.gmail.com'
+EMAIL_HOST_USER = "see env"
+EMAIL_HOST_PASSWORD = "see env"
+EMAIL_PORT = 587
