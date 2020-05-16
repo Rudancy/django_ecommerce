@@ -1,19 +1,22 @@
-{% extends 'base.html' %} {% block content %} {% for product in products %}
-<div class="card" style="width: 18rem;">
-    <div class="product card-img-top Product" style="background-image: url('{{ MEDIA_URL }}{{ product.image }}')"></div>
-    <div class="card-body">
-        <h5 class="card-title">{{ product_name }}</h5>
-        <p class="card-text">{{ product.description }}</p>
-        <form method="post" action="{% url 'add_to_cart' product.id %}">
-            {% csrf_token %}
-            <div class="input-group">
-                <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
-                <span class="input-group-btn">
+{% extends 'base.html' %}  {% load staticfiles%} 
+
+{% block content %}
+    {% for product in products %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{ MEDIA_URL }}{{ product.image }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <form method="post" action="{% url 'add_to_cart' product.id %}">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                    <span class="input-group-btn">
                         <button class="btn btn-success" type="submit">Add</button>
                     </span>
-            </div>
-        </form>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
 {% endfor %} {% endblock %}

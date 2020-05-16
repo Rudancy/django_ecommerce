@@ -140,7 +140,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-MEDIA_URL= '/MEDIA/'
+MEDIA_URL= '/media/'
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smpt.gmail.com'

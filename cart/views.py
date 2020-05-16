@@ -30,6 +30,8 @@ def adjust_cart(request, id):
 
     if quantity > 0:
         cart[id] = quantity
+        #if cart[id] is cart[id] in cart:
+            #quantity 
     else:
         cart.pop(id)
     

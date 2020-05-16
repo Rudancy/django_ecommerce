@@ -1,21 +1,20 @@
-{% extends 'base.html' %}
-{% load static from staticfiles %}
+{% extends 'base.html' %} {% load static from staticfiles %} 
+{% block content %} 
 
+{% block title %} View Cart {% endblock %}
 
-{% block content %}
-<div class="row row-flex">
-    {% for item in cart_items %}
-    
-    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-display">
-        
-        <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
-        
-        <div class="caption">
-            <h3>{{ item.product.name }}</h3>
-            <p class="product-description">{{ item.product.description }}</p>
-            <p>{{ item.product.price }}</p>
-            <p>
-                
+{% for item in cart_items %}
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img src="{{ MEDIA_URL }}{{ item.product.image }}" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.product.name }}</h5>
+                <p class="card-text">{{ item.product.description }}</p>
+                <p class="card-text">{{ item.product.price }}</p>
                 <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
                     {% csrf_token %}
                     <div class="form-group">
@@ -28,15 +27,15 @@
                     </div>
                     <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
                 </form>
-            </p>
+            </div>
         </div>
     </div>
-    {% endfor %}
 </div>
+
 <div class="row">
     <p>Total</p>
     <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
     <a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
 </div>
 
-{% endblock %}
+{% endfor %} {% endblock %}
