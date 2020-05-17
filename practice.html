@@ -1,4 +1,12 @@
-{% extends 'base.html' %} {% load static from staticfiles %} {% block content %} {% for item in cart_items %}
+{% extends 'base.html' %}  
+ {% load static from staticfiles %}
+{% load bootstrap_tags %}
+{% block content %} 
+
+
+
+{% for item in cart_items %}
+<p>hello</p>
 
 <div class="card mb-3" style="max-width: 540px;">
     <div class="row no-gutters">
@@ -26,11 +34,11 @@
         </div>
     </div>
 </div>
-
+{% endfor %}
 <div class="row">
     <p>Total</p>
     <p><span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{ total }}</p>
     <a href="/" class="btn btn-success" role="button"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>Checkout</a>
 </div>
-{% endblock %}
-{% endfor %
+
+ {% endblock %}
