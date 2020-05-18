@@ -17,26 +17,19 @@
 
 
     <title>{% block page_title %}Great Trainers{% endblock %}</title>
+
+
+
+
 </head>
 
 <body>
 
 
 
-    <nav class="site-header sticky-top py-1">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mx-auto"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
-        </a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Tour</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Product</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Features</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Enterprise</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Pricing</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Cart</a>
-      </div>
-    </nav>
+
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 
         <a class="navbar-brand" href="{% url 'index' %}">Great Trainers</a>
 
@@ -71,17 +64,17 @@
                         </a>
 
                 </li>
-                <li>
-                    <div class="display float-left">
-                        <form class="search-form" action="{% url 'search' %}" method="GET">
-                            <input type="text" name="q">
 
-                            <button class="btn btn-secondary" type="submit">Search</button>
+                <div class="justify-content-center">
+                    <form class="search-form" action="{% url 'search' %}" method="GET">
+                        "> <input type="text" name="q"></span>
 
-                        </form>
-                    </div>
+                        <span class="search-bar-button"> <button class="btn btn-secondary" type="submit">Search</button></span>
 
-                </li>
+                    </form>
+                </div>
+
+
 
 
             </ul>
@@ -89,14 +82,62 @@
         </div>
     </nav>
     <h1>
-        {% block page_heading %}{% endblock %}
-    </h1>
 
-    <hr> {% if messages %}
-    <div>
-        {% for message in messages %} {{ message }} {% endfor %}
-    </div>
-    {% endif %} {% block content %}{% endblock %}
+        <div class="row">
+            {% block page_heading %}
+
+            <div class="jumbotron jumbotron-fluid col-sm-12">
+                <div class="container">
+                    <h1>Great Trainers</h1>
+                    <h4>The best site for bespoke trainers,
+                        <h4>
+                </div>
+            </div>
+
+            {% endblock %}
+
+        </div>
+
+
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="la.jpg" alt="Los Angeles">
+                </div>
+                <div class="carousel-item">
+                    <img src="chicago.jpg" alt="Chicago">
+                </div>
+                <div class="carousel-item">
+                    <img src="ny.jpg" alt="New York">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+        </div>
+
+
+
+        <hr> {% if messages %}
+        <div>
+            {% for message in messages %} {{ message }} {% endfor %}
+        </div>
+        {% endif %} {% block content %}{% endblock %}
 
 
 </body>

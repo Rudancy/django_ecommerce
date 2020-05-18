@@ -22,6 +22,7 @@ from cart import urls as urls_cart
 from search import urls as urls_search
 from django.views import static
 from .settings import MEDIA_ROOT
+from home.views import carousel
 
 
 urlpatterns = [
