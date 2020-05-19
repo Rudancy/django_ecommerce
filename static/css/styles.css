@@ -49,3 +49,19 @@ caption p {
 p {
     font-size: 1rem;
 }
+
+.nav-item {
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+
+.search-form{
+ margin-left: 6rem;
+ 
+}
+
+.control-label{
+ font-size: 1.5rem;   
+}

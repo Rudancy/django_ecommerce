@@ -1,7 +1,12 @@
 {% extends 'base.html' %} {% load static from staticfiles %} 
-{% block content %} 
+ 
 
 {% block title %} View Cart {% endblock %}
+
+{% block page_heading %}{% endblock %}
+
+
+{% block content %}
 
 {% for item in cart_items %}
 
