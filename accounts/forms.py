@@ -17,7 +17,7 @@ class UserRegistrationForm(UserCreationForm):
     """ form to register new users"""
     
     password1 = forms.CharField(
-                label="password", 
+                label="Password", 
                 widget=forms.PasswordInput)
     password2 = forms.CharField(
                 label="Password Confirmation", 
