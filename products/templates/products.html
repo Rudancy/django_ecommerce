@@ -4,6 +4,7 @@
     <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-text">{{ product.description }}</p>
+        <p>{{ product_brand.brand }}</p>
         <form method="post" action="{% url 'add_to_cart' product.id %}">
             {% csrf_token %}
             <div class="input-group">
@@ -14,6 +15,12 @@
             </div>
         </form>
         <form method="post" action="{% url 'product_information' product.pk %}">
+            {% csrf_token %}
+            <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit">Add</button>
+            </span>
+        </form>
+        <form method="post" action="{% url 'brand_products' %}">
             {% csrf_token %}
             <span class="input-group-btn">
                         <button class="btn btn-success" type="submit">Add</button>

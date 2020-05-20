@@ -17,7 +17,7 @@ BRAND_CHOICES = (
 AGE_CHOICES = (
     ('M', 'Mens'),
     ('F', 'Women'),
-    ('k', 'kIDS')
+    ('k', 'kids')
     )
 
 
@@ -30,8 +30,8 @@ class Product(models.Model):
     image_2 = models.ImageField(upload_to='images')
     year_created = models.DateField(auto_now=False)
     history_of_product = models.TextField()
-    brand = models.CharField(max_length=2, choices=BRAND_CHOICES, default='')
-    age = models.CharField(max_length=1, choices=AGE_CHOICES, default='')
+    age = models.CharField(max_length=5, choices=AGE_CHOICES, default='')
+    brand = models.CharField(max_length=20, choices=BRAND_CHOICES, default='')
     
     
     def __str__(self):
@@ -39,3 +39,8 @@ class Product(models.Model):
     
 
 # Create your models here.
+
+    
+    
+    
+    
