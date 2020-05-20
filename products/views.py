@@ -13,4 +13,4 @@ def product_information(request, pk):
     
 def brand_products(request, BRAND_CHOICES):
     BRAND_CHOICES = Product.objects.filter(brand=BRAND_CHOICES)
-    return render(request, "brands.html", {"product_brand":BRAND_CHOICES})
+    return render(request, "brand_products.html", {"product_brand":BRAND_CHOICES})

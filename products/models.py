@@ -31,7 +31,7 @@ class Product(models.Model):
     year_created = models.DateField(auto_now=False)
     history_of_product = models.TextField()
     age = models.CharField(max_length=5, choices=AGE_CHOICES, default='')
-    brand = models.CharField(max_length=20, choices=BRAND_CHOICES, default='')
+    brand = models.CharField(max_length=20, choices=BRAND_CHOICES, default='AD')
     
     
     def __str__(self):
