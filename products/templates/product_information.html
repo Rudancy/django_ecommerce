@@ -1,9 +1,35 @@
-{% extends 'base.html' %}
-
-
-
-{% block content %}
-
+{% extends 'base.html' %} {% block page_heading %}
 <h1>{{product_information.name}}</h1>
+{% endblock %} {% block content %}
+
+<div class="row">
+    <div class="col-md-6 col-lg-6">
+        <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product_information.image_1 }}')"></div>
+    </div>
+    <div class="col-md-6 col-lg-6 product-info-text">
+        <p>ger vt tv34 v 43vt 43vt </p>
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class="col-md-6 col-lg-6 product-info-text">
+        <p>t34tbt4 4t v34 t 34t v34 t 34tv 43t</p>
+    </div>
+    <div class="col-md-6 col-lg-6">
+        <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product_information.image_2 }}')"></div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-6 col-lg-6">
+        <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product_information.image_3 }}')"></div>
+    </div>
+    <div class="col-md-6 col-lg-6 product-info-text">
+        <p>{{ product_information.description }}</p>
+    </div>
+</div>
 
 {% endblock %}

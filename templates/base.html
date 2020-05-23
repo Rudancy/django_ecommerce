@@ -38,11 +38,19 @@
         </button>
 
         <div class="collapse navbar-collapse " id="NavbarDropDown">
-            <ul class="navbar-nav">
+
+
+
+            <ul class="navbar-nav mr-auto">
                 {% if user.is_authenticated %}
                 <li class="nav-item active">
-                    <a href="{% url 'profile' %}">Profile <span class="sr-only">(current)</span></a>
+                    <a href="{% url 'profile' %}">Profile <span class="sr-only"></span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+
+
                 <li class="nav-item">
                     <a href="{% url 'logout' %}">Logout</a>
                 </li>
@@ -52,6 +60,24 @@
                 </li>
                 <li class="nav-item">
                     <a href="{% url 'login' %}">Login</a> {% endif %}
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Brands
+        </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'brand_products' 'AD' %}">Addidas</a>
+                        <a class="dropdown-item" href="#"></a>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{% url 'index' %}">All Trainers</a>
+                    </div>
                 </li>
 
                 <li class="nav-item">
@@ -83,23 +109,18 @@
     </nav>
 
 
+    <div class="row">
+        <div class="jumbotron jumbotron-fluid col-sm-12">
+            <div class="container">
+                {% block page_heading %}
+                <h1>Great Trainers</h1>
+                {% endblock %}
+                <h5>The best site for bespoke trainers</h5>
 
-
-
-    <div class="jumbotron jumbotron-fluid col-sm-12">
-        <div class="container">
-
-            {% block page_heading %}
-            <h1>Great Trainers</h1>{% endblock %}
-
-            <h4>The best site for bespoke trainers,
-                <h4>
+            </div>
         </div>
     </div>
-
-
-
-
+    {% block content %} {% endblock %}
 
 
 
@@ -108,10 +129,7 @@
     <div>
         {% for message in messages %} {{ message }} {% endfor %}
     </div>
-    {% endif %} {% block content %}{% endblock %}
-
-
-
+    {% endif %}
 
 
 </body>

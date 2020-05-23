@@ -3,6 +3,13 @@ body {
     padding-top: 100px;
 }
 
+.nav-item,
+a {
+
+    color: white;
+}
+
+
 footer {
     margin-top: 40px;
     padding-top: 20px;
@@ -57,11 +64,37 @@ p {
 }
 
 
-.search-form{
- margin-left: 6rem;
- 
+.search-form {
+    margin-left: 6rem;
+
 }
 
-.control-label{
- font-size: 1.5rem;   
+.control-label {
+    font-size: 1.5rem;
 }
+
+
+/*------------------------------------------------  product images */
+
+.card {
+    margin: 1rem;
+
+
+}
+
+.card-img-top {
+    height: 20rem;
+}
+
+/*------------------------------------------------ product-info images */
+
+.product {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 20rem;
+    margin: 0 auto;
+}
+
+.product-info-text {}
