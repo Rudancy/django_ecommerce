@@ -6,7 +6,7 @@ from django.db import models
 BRAND_CHOICES = (
     ('AD', 'Addidas'),
     ('NK', 'Nike'),
-    ('CV', 'Coverse'),
+    ('CV', 'Converse'),
     ('DD', 'Diadora'),
     ('EA', 'Emporium Armani'),
     ('NB', 'New Balance'),
@@ -19,6 +19,8 @@ AGE_CHOICES = (
     ('F', 'Women'),
     ('k', 'kids')
     )
+    
+
 
 
 class Product(models.Model):
@@ -35,6 +37,7 @@ class Product(models.Model):
     history_of_product_4 = models.TextField(blank=True)
     age = models.CharField(max_length=5, choices=AGE_CHOICES, default='')
     brand = models.CharField(max_length=20, choices=BRAND_CHOICES, default='AD')
+    
     
     
     def __str__(self):

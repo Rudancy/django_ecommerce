@@ -14,3 +14,8 @@ def product_information(request, pk):
 def brand_products(request, BRAND_CHOICES):
     BRAND_CHOICES = Product.objects.filter(brand=BRAND_CHOICES)
     return render(request, "brand_products.html", {"product_brand":BRAND_CHOICES})
+    
+    
+def age_products(request, AGE_CHOICES):
+    AGE_CHOICES = Product.objects.filter(age=AGE_CHOICES)
+    return render(request, "age_products.html", {"age_products":AGE_CHOICES})
