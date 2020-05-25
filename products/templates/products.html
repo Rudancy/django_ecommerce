@@ -17,24 +17,22 @@
                 </span>
                     </div>
                 </form>
+                </form>
                 <form method="post" action="{% url 'product_information' product.pk %}">
                     {% csrf_token %}
                     <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">More Information</button>
-            </span>
-                
-                
-                
-               
-                
-                </form>
-                 <form method="post" action="{% url 'add_product_to_wishlist' product.id %}">
-                   {% csrf_token %}
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" type="submit">add to wish list</button>
+                        <button class="btn btn-info" type="submit">More Information</button>
             </span>
                 </form>
+                {% if user.is_authenticated %}
 
+                <form method="post" action="{% url 'add_product_to_wishlist' product.id %}">
+                    {% csrf_token %}
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="submit">add to wish list</button>
+            </span>
+                </form>
+                {% endif %}
 
 
 

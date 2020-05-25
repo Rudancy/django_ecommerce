@@ -14,20 +14,12 @@
 
 
 
-
-
-
     <title>{% block page_title %}Just Classics{% endblock %}</title>
-
-
 
 
 </head>
 
 <body>
-
-
-
 
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -52,7 +44,7 @@
                     <a href="{% url 'logout' %}">Logout</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'see_wishlist' %}">Wishlist</a>
+                    <a href="{% url 'see_wishlist'%}">Wishlist</a>
                 </li>
 
                 {% else %}
@@ -125,7 +117,11 @@
 
         </div>
     </nav>
-
+    {% if messages %}
+    <div>
+        {% for message in messages %} {{ message }} {% endfor %}
+    </div>
+    {% endif %}
 
     <div class="row">
 
@@ -144,11 +140,7 @@
 
 
 
-    <hr> {% if messages %}
-    <div>
-        {% for message in messages %} {{ message }} {% endfor %}
-    </div>
-    {% endif %}
+
 
 
 </body>
