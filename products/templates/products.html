@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load staticfiles%} {% block content %} 
+{% extends 'base.html' %} {% load staticfiles%} {% block content %}
 <div class="row">
     {% for product in products %}
     <div class="col-lg-3">
@@ -23,16 +23,22 @@
                         <button class="btn btn-success" type="submit">More Information</button>
             </span>
                 </form>
+                 <form method="post" action="{% url 'add_product_to_wishlist' product.pk %}">
+                    {% csrf_token %}
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit">add to wish list</button>
+            </span>
+                </form>
 
-                
 
-                
+
+
 
             </div>
 
 
         </div>
     </div>
-{% endfor %}
+    {% endfor %}
 </div>
- {% endblock %}
+{% endblock %}

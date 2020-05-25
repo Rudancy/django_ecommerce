@@ -1,3 +1,37 @@
-{% extends 'base.html' %} {% load staticfiles%} {% block content %} {% for product in age_products %}
-<p>{{ product.name }}</p>
-{% endfor %} {% endblock %}
+{% extends 'base.html' %} {% load staticfiles%} {% block content %}
+
+<div class="row">
+    {% for product in age_products %}
+    <div class="col-lg-3">
+        <div class="card">
+            <img style="background-image" src="{{ MEDIA_URL }}{{ product.image_1 }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description }}</p>
+                <p>{{ product.brand }}</p>
+                <form method="post" action="{% url 'add_to_cart' product.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+                        <span class="input-group-btn">
+                    <button class="btn btn-success" type="submit">Add</button>
+                </span>
+                    </div>
+                </form>
+                <form method="post" action="{% url 'product_information' product.pk %}">
+                    {% csrf_token %}
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit">More Information</button>
+            </span>
+                </form>
+
+
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+    {% endfor %}</div> {% endblock %}

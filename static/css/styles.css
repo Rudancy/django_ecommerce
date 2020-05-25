@@ -97,6 +97,14 @@ p {
     margin: 0 auto;
 }
 
-.product-info-text {
-    
+.product-info-text {}
+
+
+.form {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.my-css-jumb{
+    margin-left: 1rem;
 }

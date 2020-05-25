@@ -1,13 +1,13 @@
-{% extends 'base.html' %} {% load bootstrap_tags %} {% block page_title %}Login Page{% endblock %} {% block page_heading %}<h1>User Login</h1>{% endblock %}
+{% extends 'base.html' %} {% load bootstrap_tags %} {% block page_title %}Login Page{% endblock %} {% block page_heading %}
+<h1>User Login</h1>{% endblock %} {% block content %}
+<div class="row">
+<div class="col-lg-6 offset-lg-1 col-md-10 offset-md-1 col-sm-12 offset-sm-1 col-xs-12 offset-xs-1"
+    <form method="POST">
+        {% csrf_token %} {{ login_form | as_bootstrap }}
+        <button type="submit">Login</button>
+    </form>
 
+    <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
 
-{% block content %}
-<form method="POST">
-    {% csrf_token %} {{ login_form | as_bootstrap }}
-    <button type="submit">Login</button>
-</form>
-
-<p><a href="{% url 'password_reset' %}">Reset Password</a></p>
-
-
+</div>
 {% endblock %}
