@@ -1,4 +1,11 @@
 {% extends 'base.html' %} {% load staticfiles%}  
 
+
 {% block content %}
+{% for product in wished_product%}
+<p>{{product.wished_product.price}}</p>
+<p>{{product.wished_product.name}}</p>
+<p>{{product.wished_product.name}}</p>
+{%endfor%}
+
 {% endblock %}

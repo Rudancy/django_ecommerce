@@ -22,9 +22,14 @@
                     <span class="input-group-btn">
                         <button class="btn btn-success" type="submit">More Information</button>
             </span>
+                
+                
+                
+               
+                
                 </form>
                  <form method="post" action="{% url 'add_product_to_wishlist' product.id %}">
-                    {% csrf_token %}
+                   {% csrf_token %}
                     <span class="input-group-btn">
                         <button class="btn btn-success" type="submit">add to wish list</button>
             </span>

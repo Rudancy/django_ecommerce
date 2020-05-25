@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Wish_list
 from products.models import Product
-
+from django.contrib.auth.decorators import login_required
 
 
 def add_product_to_wishlist(request, pk):
@@ -21,7 +21,7 @@ def add_product_to_wishlist(request, pk):
     
     messages.info(request, 'The Product has been added')
     
-    return render("wish_list.html", {'wished_product':wished_product})
+    return render(request, "wish_list.html", {'wished_product':wished_product})
     
     
       
@@ -44,10 +44,11 @@ def see_wishlist(request, pk):
     renders the wishlist to the users profile.html
     
     """
-    wished_products = Wish_list.objects.filter(date_added__lte=timezone.now
-    ().order_by('-date_added'))
+    user = get_object_or_404(User, id=pk)
+    
+    wished_products = Wish_list.Product.objects.all()
     if wished_products is None:
         messages.error(request, 'You have no wishes...Please add some')
     else:
-        return (render, 'profile.html', {'product': wished_products})
+        return (request, 'wish_list', {'user': user })
     

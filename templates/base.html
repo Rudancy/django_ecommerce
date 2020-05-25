@@ -47,14 +47,12 @@
                 <li class="nav-item active">
                     <a href="{% url 'profile' %}">Profile <span class="sr-only"></span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-
 
                 <li class="nav-item">
                     <a href="{% url 'logout' %}">Logout</a>
                 </li>
+
+
                 {% else %}
                 <li class="nav-item">
                     <a href="{% url 'registration' %}">Register</a>
@@ -127,7 +125,8 @@
 
 
     <div class="row">
-        <div class="jumbotron jumbotron-fluid col-sm-12">
+
+        <div class="jumbotron jumbotron-fluid col-sm-12 my-css-jumb">
             <div class="container">
                 {% block page_heading %}
                 <h1>Just Classics</h1>
