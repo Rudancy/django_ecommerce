@@ -50,5 +50,5 @@ def see_wishlist(request, pk):
     if wished_products is None:
         messages.error(request, 'You have no wishes...Please add some')
     else:
-        return (request, 'wish_list', {'user': user })
+        return (request, 'wish_list.html', {'wished_products': wished_products, 'user':user })
     
