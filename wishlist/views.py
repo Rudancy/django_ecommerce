@@ -21,7 +21,7 @@ def add_product_to_wishlist(request, pk):
     
     messages.info(request, 'The Product has been added')
     
-    return redirect('wish_list.html', {'wished_product':wished_product})
+    return render("wish_list.html", {'wished_product':wished_product})
     
     
       
