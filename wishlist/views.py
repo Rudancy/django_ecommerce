@@ -14,14 +14,14 @@ def add_product_to_wishlist(request, pk):
     
     """
     
-    product = get_object_or_404(Product,pk)
+    product = get_object_or_404(Product, id=pk) 
     
-    wished_products = Wish_list.objects.get_or_create(wished_products=product,
+    wished_product = Wish_list.objects.get_or_create(wished_product=product,
                                                                     pk=pk, user=request.user)
     
     messages.info(request, 'The Product has been added')
     
-    return redirect('profile.html', {'wished_products':wished_products})
+    return redirect('wish_list.html', {'wished_product':wished_product})
     
     
       
