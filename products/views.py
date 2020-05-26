@@ -1,9 +1,19 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def all_products(request):
-    products = Product.objects.all()
+    products_list = Product.objects.all()
+    page =request.GET.get('page', 1)
+    
+    paginator= Paginator(products_list, 2)
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
     return render(request, "products.html", {"products":products})
     
 def product_information(request, pk):

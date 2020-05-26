@@ -34,14 +34,41 @@
                 </form>
                 {% endif %}
 
-
-
-
             </div>
 
 
         </div>
     </div>
-    {% endfor %}
-</div>
+    {% endfor %}</div>
+
+</nav>
+<!-------------------------------- https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html  ------------>
+<hr>
+
+<nav aria-label="Page navigation example">
+    {% if products.has_other_pages %}
+    <ul class="pagination justify-content-center pag-style">
+
+        {% if products.has_previous %}
+        <li class="active"><a class="page-link" href="?page={{ products.previous_page_number }}">Previous</a></li>
+        {% else %}
+        <li class="disabled"></li>
+        {% endif %} 
+        {% for i in products.paginator.page_range %} 
+        {% if products.number == i %}
+        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></li>
+        {% else %}
+        <li><a href="?page={{i}}">{{i}}</a></li>
+        {% endif %} 
+        {%endfor%} 
+        {% if products.has_next %}
+        <li class="active"><a class="page-link" href="?page={{ products.next_page_number }}">Next</a></li>
+        <li><a href="?page={{ i }}">{{ i }}</a></li>
+        {%else%}
+        <li class="disabled"></li>
+        {% endif %}
+    </ul>
+    {% endif %}
+</nav>
+
 {% endblock %}
