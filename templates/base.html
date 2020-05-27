@@ -10,8 +10,8 @@
     <!-- CSS only -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.css' %}" type="text/css">
-
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
 
 
     <title>{% block page_title %}Just Classics{% endblock %}</title>
@@ -37,23 +37,31 @@
             <ul class="navbar-nav mr-auto">
                 {% if user.is_authenticated %}
                 <li class="nav-item active">
-                    <a href="{% url 'profile' %}">Profile <span class="sr-only"></span></a>
+                    <a href="{% url 'profile' %}"><i class="fa fa-user"></i>Profile <span class="sr-only"></span></a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="{% url 'logout' %}">Logout</a>
+                    <a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i></i>Logout</a>
                 </li>
+
+
+
+
+
                 <li class="nav-item">
-                    <a href="{% url 'see_wishlist' wish_list.user.pk}">Wishlist</a>
+                    <a href="{% url 'see_wishlist' wish_list.user.id}"><i class="fa fa-heart"></i>Wishlist</a>
                 </li>
+
+
+
 
                 {% else %}
 
                 <li class="nav-item">
-                    <a href="{% url 'registration' %}">Register</a>
+                    <a href="{% url 'registration' %}"><i class="fa fa-pencil"></i>Register</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{% url 'login' %}">Login</a> {% endif %}
+                    <a href="{% url 'login' %}"><i class="fa fa-sign-in"></i>Login</a> {% endif %}
                 </li>
 
                 <li class="nav-item dropdown">
@@ -93,7 +101,7 @@
                 <li class="nav-item">
                     <a href="{% url 'view_cart' %}">
                             
-                            <i class="fa fa-shipping-cart"></i>Cart
+                            <i class="fa fa-shopping-basket"></i>Cart
                             {% if product_count > 0 %}
                             <label class="badge badge-warning">{{ product_count }}</label>
                             {% endif %}
@@ -103,9 +111,9 @@
 
                 <div class="justify-content-center">
                     <form class="search-form" action="{% url 'search' %}" method="GET">
-                        "> <input type="text" name="q"></span>
+                        > <input type="text" name="q"></span>
 
-                        <span class="search-bar-button"> <button class="btn btn-secondary" type="submit">Search</button></span>
+                        <span class="search-bar-button"> <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button></span>
 
                     </form>
                 </div>
@@ -137,8 +145,45 @@
     </div>
     {% block content %} {% endblock %}
 
+    <!-- Site footer https://codepen.io/scanfcode/pen/MEZPNd -->
 
 
+
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>About</h6>
+                    <p class="text-justify">This company is about style, and ease of choice. If every trainer has a history of being one of the most classic trainers in
+                    the world, then what do you have to worry about. Here at Just Classics we pride ourselves on our commiment to only selling the best trainers, so you do
+                    not have to even think about them. We love our trainers as much as we love consumer satisfaction.</p>
+                </div>
+
+                
+            </div>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+                        <a href="#">Great Trainers</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
 

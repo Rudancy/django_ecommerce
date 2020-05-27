@@ -23,21 +23,6 @@ def add_product_to_wishlist(request, pk):
     
     return render(request, "wish_list.html", {'wished_product':wished_product})
     
-    
-      
-    
-    
-        
-    
-    
-    
-def delete_product_from_wishlist(request, pk):
-    """ 
-    deletes a product from the wish list using the product
-    pk.
-    
-    """
-
 
 def see_wishlist(request, pk):
     """
@@ -51,4 +36,19 @@ def see_wishlist(request, pk):
         messages.error(request, 'You have no wishes...Please add some')
     else:
         return (request, 'wish_list.html', {'wished_products': wished_products, 'user':user })
+
+    
+      
+    
+    
+        
+def delete_product_from_wishlist(request, pk):
+    """ 
+    deletes a product from the wish list using the product
+    pk.
+    
+    """
+
+
+
     

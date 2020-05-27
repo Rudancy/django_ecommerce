@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block page_heading %}
+{% extends 'base.html' %} {% load staticfiles%} {% block page_heading %}
 <h1>{{product_information.name}}</h1>
 {% endblock %} {% block content %}
 
@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col-md-6 col-lg-6">
-        <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product_information.image_1 }}')"></div>
+        <div class="product" id="product1" style="background-image: url('{{ MEDIA_URL }}{{ product_information.image_1 }}')"></div>
     </div>
     <div class="col-md-6 col-lg-6 product-info-text">
         <p>{{product_information.history_of_product_1}}</p>
@@ -39,3 +39,5 @@
 
 
 {% endblock %}
+
+
