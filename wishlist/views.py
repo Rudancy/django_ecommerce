@@ -7,6 +7,8 @@ from products.models import Product
 from django.contrib.auth.decorators import login_required
 
 
+
+
 def add_product_to_wishlist(request, pk):
     """ 
     adds a product to the wish list using the product
@@ -31,11 +33,12 @@ def see_wishlist(request, pk):
     """
     user = get_object_or_404(User, id=pk)
     
-    wished_products = Wish_list.wished_product.filter(id=id)
+    wished_products = Wish_list.objects.get(id=1)
+    
     if wished_products is None:
         messages.error(request, 'You have no wishes...Please add some')
     else:
-        return (request, 'wish_list.html', {'wished_products': wished_products, 'user':user })
+        return render(request, 'wish_list.html', {'wished_products': wished_products, 'user':user })
 
     
       
