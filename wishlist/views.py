@@ -31,7 +31,7 @@ def see_wishlist(request, pk):
     """
     user = get_object_or_404(User, id=pk)
     
-    wished_products = Wish_list.Product.objects.all()
+    wished_products = Wish_list.wished_product.filter(id=id)
     if wished_products is None:
         messages.error(request, 'You have no wishes...Please add some')
     else:
