@@ -15,16 +15,25 @@ def add_product_to_wishlist(request, pk):
     pk.
     
     """
+     #product = get_object_or_404(Product, id=pk) 
     
-    product = get_object_or_404(Product, id=pk) 
+    #wished_product = Wish_list.objects.get_or_create(wished_product=product,
+    #                                                pk=pk, user=request.user)
+    products = Product.objects.filter(wish_list__user=request.user)
     
-    wished_product = Wish_list.objects.get_or_create(wished_product=product,
-                                                                    pk=pk, user=request.user)
+    
+    page = products.page(1)
+    my_products = page.object_list
+    
+    
+    
+    
+    
     
     messages.info(request, 'The Product has been added')
-    
-    return render(request, "wish_list.html", {'wished_product':wished_product})
-    
+    print(products) 
+    #return render(request, "wish_list.html", {'products':products, 'my_products':my_products})
+
 
 def see_wishlist(request, pk):
     """
@@ -54,4 +63,3 @@ def delete_product_from_wishlist(request, pk):
 
 
 
-    

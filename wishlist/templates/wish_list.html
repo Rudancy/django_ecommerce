@@ -2,10 +2,8 @@
 
 
 {% block content %}
-{% for product in wished_product%}
-<p>{{product.wished_product.price}}</p>
-<p>{{product.wished_product.name}}</p>
-<p>{{product.wished_product.description}}</p>
+{% for p in my_products %}
+<p>{{p.product}}</p>
 {%endfor%}
 
 {% endblock %}
