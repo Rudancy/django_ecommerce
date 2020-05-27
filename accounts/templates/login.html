@@ -2,7 +2,7 @@
 Login Page{% endblock %} {% block page_heading %}<h1>Login</h1>{% endblock %} {% block content %}
 
 <div class="row">
-    <div class="col-lg-8 offset-lg-2 forms">
+    <div class="col-lg-8 offset-lg-2 reg-custom-bg">
         <form method="POST">
             {% csrf_token %} {{ login_form | as_bootstrap }}
             <button type="submit" class="btn btn-dark">Login</button>

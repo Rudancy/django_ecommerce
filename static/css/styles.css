@@ -9,30 +9,10 @@ a {
     color: white;
 }
 
-
-footer {
-    margin-top: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-top: 1px solid #ededed;
-    color: #A9A9A9;
+.dropdown-item {
+    color: #343a40;
 }
 
-.icon-bar {
-    background-color: #fff;
-}
-
-.accountform {
-    padding-top: 20px;
-}
-
-.badge {
-    padding-left: 9px;
-    padding-right: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
-}
 
 .label-warning[href],
 .badge-warning[href] {
@@ -124,12 +104,15 @@ p {
     margin-left: 2rem;
     margin-right: 2rem;
 }
-.reg-custom-bg{
-    
+
+.reg-custom-bg {}
+
+.custom-link {
+    color: dodgerblue;
 }
 
-.custom-link{
-    color: dodgerblue;
+.label {
+    font-size: 1rem;
 }
 
 /*------------------------------------------------ pagination */
@@ -154,12 +137,39 @@ p {
 
 /*------------------------------------------------ footer  https://codepen.io/scanfcode/pen/MEZPNd */
 
+footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #ededed;
+    color: #A9A9A9;
+}
+
+.icon-bar {
+    background-color: #fff;
+}
+
+.accountform {
+    padding-top: 20px;
+}
+
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+}
+
+
+
+
 .site-footer {
     background-color: #26272b;
     padding: 45px 0 20px;
     font-size: 15px;
     line-height: 24px;
-    color: #737373;
+    color: #ffffff;
 }
 
 .site-footer hr {
@@ -180,7 +190,7 @@ p {
 }
 
 .site-footer a {
-    color: #737373;
+    color: #007bff;
 }
 
 .site-footer a:hover {
