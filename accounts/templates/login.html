@@ -7,7 +7,7 @@ Login Page{% endblock %} {% block page_heading %}<h1>Login</h1>{% endblock %} {%
             {% csrf_token %} {{ login_form | as_bootstrap }}
             <button type="submit" class="btn btn-dark">Login</button>
         </form>
-        <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+        <p><a href="{% url 'password_reset' %}" class="button-form">Reset Password</a></p>
     </div>
 </div>
 {% endblock %}

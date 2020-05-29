@@ -1,6 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     padding-top: 100px;
+    background-color: #ebf0f5;
 }
 
 .nav-item,
@@ -53,7 +54,8 @@ p {
 .control-label {
     font-size: 1rem;
 }
-.help-block{
+
+.help-block {
     font-size: 0.8rem;
 }
 
@@ -65,6 +67,7 @@ p.text-justify {
 
 .card {
     margin: 1.5rem;
+    border-radius: 15px;
 
 
 }
@@ -104,6 +107,10 @@ p {
 .forms {
     margin-left: 2rem;
     margin-right: 2rem;
+}
+
+.button-form {
+    color: #26272b;
 }
 
 .reg-custom-bg {}
@@ -330,6 +337,46 @@ footer {
     }
 }
 
-.error{
+.error {
     color: red;
+}
+
+
+
+
+.my-css-jumb {
+    padding-left: 1rem;
+}
+
+.product-bg {
+    background-color: darkgray;
+}
+
+
+/*------------------------------------------------ index --*/
+
+.intro-heading {
+    margin-top: 15px;
+}
+
+
+.intro-sub-heading {
+    margin-top: 15px;
+}
+
+
+.carousel-image-size {
+    border-radius: 15px;
+}
+
+
+.index-images {
+    margin-top: 1rem;
+    border-radius: 15px;
+}
+
+.intro-text {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 15px;
 }
