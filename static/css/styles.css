@@ -20,15 +20,7 @@ a {
     background-color: #c67605;
 }
 
-.product {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-    border-radius: 23px;
-}
+
 
 caption p {
     word-wrap: break-word;
@@ -65,6 +57,17 @@ p.text-justify {
 
 /*------------------------------------------------  product images */
 
+.product {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 23px;
+}
+
+
 .card {
     margin: 1.5rem;
     border-radius: 15px;
@@ -80,11 +83,13 @@ p.text-justify {
 
 /*------------------------------------------------ product-info images */
 
+
+
 .product {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    width: 300px;
+    width: auto;
     height: 20rem;
     margin: 0 auto;
 
@@ -348,9 +353,6 @@ footer {
     padding-left: 1rem;
 }
 
-.product-bg {
-    background-color: darkgray;
-}
 
 
 /*------------------------------------------------ index --*/
@@ -367,6 +369,8 @@ footer {
 
 .carousel-image-size {
     border-radius: 15px;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 
@@ -379,4 +383,9 @@ footer {
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 15px;
+}
+
+
+@media (min-width: 768px) {
+    
 }
