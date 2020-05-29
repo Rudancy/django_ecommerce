@@ -51,7 +51,10 @@ p {
 }
 
 .control-label {
-    font-size: 1.5rem;
+    font-size: 1rem;
+}
+.help-block{
+    font-size: 0.8rem;
 }
 
 p.text-justify {
@@ -66,9 +69,7 @@ p.text-justify {
 
 }
 
-.card-body {
-    width: 16rem;
-}
+.card-body {}
 
 .card-img-top {
     height: 15rem;
@@ -327,4 +328,8 @@ footer {
         margin-right: 0;
         font-weight: 600
     }
+}
+
+.error{
+    color: red;
 }

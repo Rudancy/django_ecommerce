@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% load staticfiles%} {% block content %}
 <div class="row">
     {% for product in products %}
-    
+
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
         <div class="card">
             <img style="background-image" src="{{ MEDIA_URL }}{{ product.image_1 }}" class="card-img-top " alt="...">
@@ -11,7 +11,7 @@
                 <p>{{ product_brand.brand }}</p>
                 <form method="post" action="{% url 'add_to_cart' product.id %}">
                     {% csrf_token %}
-                    
+
                     <div class="input-group">
                         <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
                         <span class="input-group-btn">
@@ -26,22 +26,15 @@
                         <button class="btn btn-info" type="submit">More Information</button>
             </span>
                 </form>
-                {% if user.is_authenticated %}
 
-                <form method="post" action="{% url 'add_product_to_wishlist' product.id %}">
-                    {% csrf_token %}
-                    <span class="input-group-btn">
-                        <button class="btn btn-secondary" type="submit">add to wish list</button>
-            </span>
-                </form>
-                {% endif %}
 
             </div>
 
 
         </div>
     </div>
-    {% endfor %}</div></div>
+    {% endfor %}</div>
+</div>
 
 </nav>
 <!-------------------------------- https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html  ------------>
@@ -55,15 +48,11 @@
         <li class="active"><a class="page-link" href="?page={{ products.previous_page_number }}">Previous</a></li>
         {% else %}
         <li class="disabled"></li>
-        {% endif %} 
-        {% for i in products.paginator.page_range %} 
-        {% if products.number == i %}
+        {% endif %} {% for i in products.paginator.page_range %} {% if products.number == i %}
         <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></li>
         {% else %}
         <li><a href="?page={{i}}">{{i}}</a></li>
-        {% endif %} 
-        {%endfor%} 
-        {% if products.has_next %}
+        {% endif %} {%endfor%} {% if products.has_next %}
         <li class="active"><a class="page-link" href="?page={{ products.next_page_number }}">Next</a></li>
         <li><a href="?page={{ i }}">{{ i }}</a></li>
         {%else%}

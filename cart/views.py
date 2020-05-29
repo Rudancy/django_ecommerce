@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect, reverse
 from products.models import Product
 # Create your views here.
@@ -42,5 +43,4 @@ def adjust_cart(request, id):
     
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
-    
     

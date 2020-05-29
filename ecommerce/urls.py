@@ -22,7 +22,7 @@ from cart import urls as urls_cart
 from search import urls as urls_search
 from django.views import static
 from .settings import MEDIA_ROOT
-from wishlist import urls as wishlist_urls
+
 
 
 urlpatterns = [
@@ -31,7 +31,7 @@ urlpatterns = [
     url(r'^accounts/', include(accounts_urls)),
     url(r'^products/', include(urls_products)),
     url(r'^cart/', include(urls_cart)),
-    url(r'^wish_list/', include(wishlist_urls)),
+    
     url(r'^search/', include(urls_search)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]
