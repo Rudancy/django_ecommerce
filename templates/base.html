@@ -48,9 +48,7 @@
 
 
 
-                <li class="nav-item">
-                    <a href="{% url 'see_wishlist' user.id%}"><i class="fa fa-heart"></i>Wishlist</a>
-                </li>
+             
 
 
 
@@ -98,16 +96,7 @@
                     </div>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{% url 'view_cart' %}">
-                            
-                            <i class="fa fa-shopping-basket"></i>Cart
-                            {% if product_count > 0 %}
-                            <label class="badge badge-warning">{{ product_count }}</label>
-                            {% endif %}
-                        </a>
-
-                </li>
+                
 
                 <div class="justify-content-center">
                     <form class="search-form" action="{% url 'search' %}" method="GET">
