@@ -44,7 +44,7 @@ p {
 }
 
 .control-label {
-    font-size: 1rem;
+    font-size: 0.75rem;
 }
 
 .help-block {
@@ -71,6 +71,7 @@ p.text-justify {
 .card {
     margin: 1.5rem;
     border-radius: 15px;
+    
 
 
 }
@@ -80,8 +81,6 @@ p.text-justify {
 .card-img-top {
     height: 15rem;
 }
-
-/*------------------------------------------------ product-info images */
 
 
 
@@ -103,7 +102,7 @@ p.text-justify {
 
 .product-info-text,
 p {
-    font-size: 1.2rem;
+    font-size: 0.75rem;
 
 }
 
@@ -383,6 +382,7 @@ footer {
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 15px;
+    font-size: 1rem;
 }
 
 

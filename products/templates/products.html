@@ -1,32 +1,32 @@
-{% extends 'base.html' %} {% load staticfiles%} {% block content %}#
-<div class="container-fluid"
+{% extends 'base.html' %} {% load staticfiles%} {% block content %}
 <div class="row">
+    
     {% for product in products %}
-{% if product | length > 0 %}
-    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4 product-bg">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-bg d-flex align-items-stretch">
         <div class="card">
-            <img style="background-image" src="{{ MEDIA_URL }}{{ product.image_1 }}" class="card-img-top " alt="...">
+            <img style="background-image" src="{{ MEDIA_URL }}{{ product.image_1 }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{ product.name }}</h5>
                 <p class="card-text">{{ product.description }}</p>
-                <p>{{ product_brand.brand }}</p>
+                <p>{{ product.brand }}</p>
                 <form method="post" action="{% url 'add_to_cart' product.id %}">
                     {% csrf_token %}
-
                     <div class="input-group">
                         <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
                         <span class="input-group-btn">
-                    <button class="btn btn-success" type="submit">Add</button>
+                    <button class="btn btn-dark" type="submit">Add</button>
                 </span>
                     </div>
-                </form>
                 </form>
                 <form method="post" action="{% url 'product_information' product.pk %}">
                     {% csrf_token %}
                     <span class="input-group-btn">
-                        <button class="btn btn-info" type="submit">More Information</button>
+                        <button class="btn btn-success" type="submit">More Information</button>
             </span>
                 </form>
+
+
+
 
 
             </div>
@@ -34,11 +34,8 @@
 
         </div>
     </div>
-    {% else %}
-    <h4>Sorry we do not have this item</h4>
-    {% endfor %}
     {% endfor %}</div>
-</div>
+
 
 </nav>
 <!-------------------------------- https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html  ------------>

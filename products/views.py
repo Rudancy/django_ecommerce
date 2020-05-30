@@ -4,12 +4,12 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 def all_products(request):
-    products_list = Product.objects.all()
+    products = Product.objects.all()
     
     
     page =request.GET.get('page', 1)
     
-    paginator= Paginator(products_list, 8)
+    paginator= Paginator(products, 8)
     
     try:
         products = paginator.page(page)

@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
-
+{% block head_js %}
+{% endblock head_js %}
 
     <title>{% block page_title %}Just Classics{% endblock %}</title>
 
@@ -77,7 +78,7 @@
 
 
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'index' %}">All Trainers</a>
+                        <a class="dropdown-item" href="{% url 'products' %}">All Trainers</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -92,7 +93,7 @@
 
 
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'index' %}">All Trainers</a>
+                        <a class="dropdown-item" href="{% url 'products' %}">All Trainers</a>
                     </div>
                 </li>
 
