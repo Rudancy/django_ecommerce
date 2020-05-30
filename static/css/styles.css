@@ -400,3 +400,21 @@ footer {
 .cart-qty{
     margin-right: 1rem;
 }
+
+/*--------------------------------------checkout---*/
+
+.checkout-total{
+    margin-right: 1rem;
+}
+
+.checkout-total-text{
+    margin-right: 1rem;
+}
+
+.order-form{
+    padding-left: 2rem;
+}
+
+.order-form{
+    padding-right: 2rem;
+}
