@@ -389,3 +389,14 @@ footer {
 @media (min-width: 768px) {
     
 }
+
+/*-------------------------------------cart---*/
+
+
+.cart-qty-text{
+    margin-right: 0.3rem;
+}
+
+.cart-qty{
+    margin-right: 1rem;
+}
