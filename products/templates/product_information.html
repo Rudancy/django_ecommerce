@@ -4,37 +4,42 @@
 
 
 
+    
 
 
 <div class="row">
-    <div class="col-md-6 col-lg-6">
+    <div class="col-sm-12 col-md-6 col-lg-6">
         <div class="product" id="product1" style="background-image: url('{{ MEDIA_URL }}{{ product_information.image_1 }}')"></div>
     </div>
-    <div class="col-md-6 col-lg-6 product-info-text">
-        <p>{{product_information.history_of_product_1}}</p>
+
+    <div class="col-sm-12 col-md-6 col-lg-6 product-info-text">
+        <h3>{{product_information.name}}</h3>
+        <p class="product-description-text">{{product_information.history_of_product_1}}</p>
     </div>
 
 </div>
 
 
 <div class="row">
-    <div class="col-md-6 col-lg-6 product-info-text">
-        <p>{{product_information.history_of_product_2}}</p>
+    <div class="d-none d-md-block  col-md-6 col-lg-6 product-info-text">
+        <p class="product-description-text">{{product_information.history_of_product_2}}</p>
     </div>
-    <div class="col-md-6 col-lg-6">
+    <div class="col-sm-12 col-md-6 col-lg-6">
         <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product_information.image_2 }}')"></div>
     </div>
 </div>
 
 
 <div class="row">
-    <div class="col-md-6 col-lg-6">
+    <div class="d-none d-md-block col-sm-12 col-md-6 col-lg-6">
         <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ product_information.image_3 }}')"></div>
     </div>
-    <div class="col-md-6 col-lg-6 product-info-text">
-        <p>{{product_information.history_of_product_3}}</p>
+    <div class="col-sm-12 col-md-6 col-lg-6 product-info-text">
+        <p class="product-description-text">{{product_information.history_of_product_3}}</p>
     </div>
 </div>
+
+
 
 
 

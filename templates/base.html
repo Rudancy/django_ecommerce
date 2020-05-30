@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
-{% block head_js %}
-{% endblock head_js %}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet"> {% block head_js %} {% endblock head_js %}
 
     <title>{% block page_title %}Just Classics{% endblock %}</title>
 
@@ -21,41 +19,25 @@
 </head>
 
 <body>
-
+<!-------------------------------Nav-bar------------>
 
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-
         <a class="navbar-brand" href="{% url 'index' %}">Just Classics</a>
-
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#NavbarDropDown" aria-controls="NavbarDropDown" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse " id="NavbarDropDown">
-
-
 
             <ul class="navbar-nav mr-auto">
                 {% if user.is_authenticated %}
                 <li class="nav-item active">
                     <a href="{% url 'profile' %}"><i class="fa fa-user"></i>Profile <span class="sr-only"></span></a>
                 </li>
-
                 <li class="nav-item">
                     <a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i></i>Logout</a>
                 </li>
 
-
-
-
-
-             
-
-
-
-
                 {% else %}
-
                 <li class="nav-item">
                     <a href="{% url 'registration' %}"><i class="fa fa-pencil"></i>Register</a>
                 </li>
@@ -75,8 +57,6 @@
                         <a class="dropdown-item" href="{% url 'brand_products' 'EA' %}">Emporium Armani</a>
                         <a class="dropdown-item" href="{% url 'brand_products' 'NB' %}">New Balance</a>
                         <a class="dropdown-item" href="{% url 'brand_products' 'PM' %}">Puma</a>
-
-
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'products' %}">All Trainers</a>
                     </div>
@@ -89,54 +69,42 @@
                         <a class="dropdown-item" href="{% url 'age_products' 'M' %}">Mens</a>
                         <a class="dropdown-item" href="{% url 'age_products' 'F' %}">Womens</a>
                         <a class="dropdown-item" href="{% url 'age_products' 'K' %}">Kids</a>
-
-
-
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{% url 'products' %}">All Trainers</a>
                     </div>
                 </li>
 
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a href="{% url 'view_cart' %}">
                             
                             <i class="fa fa-shopping-basket"></i>Cart
                             {% if product_count > 0 %}
                             <label class="badge badge-warning">{{ product_count }}</label>
                             {% endif %}
-                        </a>
-
+                    </a>
                 </li>
-
                 <div class="justify-content-center">
                     <form class="search-form" action="{% url 'search' %}" method="GET">
-                        > <input type="text" name="q"></span>
-
+                        <input type="text" name="q"></span>
                         <span class="search-bar-button"> <button class="btn btn-secondary" type="submit"><i class="fa fa-search"></i></button></span>
-
                     </form>
                 </div>
-
-
-
-
             </ul>
-
         </div>
     </nav>
+<!-------------------------------messages------------>
+
     {% if messages %}
     <div>
         {% for message in messages %} {{ message }} {% endfor %}
     </div>
     {% endif %}
-
+<!-------------------------------Jumbotron------------>
+    
     <div class="row">
-
         <div class="jumbotron jumbotron-fluid col-sm-12 my-css-jumb">
             <div class="container">
-                <h1>{% block page_heading %}
-                Just Classics
-                {% endblock %}</h1>
+                <h1>{% block page_heading %} Just Classics {% endblock %}</h1>
                 <h5>Just Classics, Nothing else </h5>
 
             </div>
@@ -155,12 +123,11 @@
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <h6>About</h6>
-                    <p class="text-justify">This company is about style, and ease of choice. If every trainer has a history of being one of the most classic trainers in
-                    the world, then what do you have to worry about. Here at Just Classics we pride ourselves on our commiment to only selling the best trainers, so you do
-                    not have to even think about them. We love our trainers as much as we love consumer satisfaction.</p>
+                    <p class="text-justify">This company is about style, and ease of choice. If every trainer has a history of being one of the most classic trainers in the world, then what do you have to worry about. Here at Just Classics we pride ourselves on our commiment
+                        to only selling the best trainers, so you do not have to even think about them. We love our trainers as much as we love consumer satisfaction.</p>
                 </div>
 
-                
+
             </div>
             <hr>
         </div>

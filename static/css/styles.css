@@ -71,7 +71,7 @@ p.text-justify {
 .card {
     margin: 1.5rem;
     border-radius: 15px;
-    
+
 
 
 }
@@ -88,7 +88,7 @@ p.text-justify {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
-    width: auto;
+    width: 20rem;
     height: 20rem;
     margin: 0 auto;
 
@@ -356,6 +356,10 @@ footer {
 
 /*------------------------------------------------ index --*/
 
+.front-small {}
+
+
+
 .intro-heading {
     margin-top: 15px;
 }
@@ -376,6 +380,11 @@ footer {
 .index-images {
     margin-top: 1rem;
     border-radius: 15px;
+    
+    
+    
+    
+    
 }
 
 .intro-text {
@@ -386,35 +395,41 @@ footer {
 }
 
 
-@media (min-width: 768px) {
-    
-}
+
 
 /*-------------------------------------cart---*/
 
-
-.cart-qty-text{
+.cart-qty-text {
     margin-right: 0.3rem;
 }
 
-.cart-qty{
+.cart-qty {
     margin-right: 1rem;
 }
 
 /*--------------------------------------checkout---*/
 
-.checkout-total{
+.checkout-total {
     margin-right: 1rem;
 }
 
-.checkout-total-text{
+.checkout-total-text {
     margin-right: 1rem;
 }
 
-.order-form{
+.order-form {
     padding-left: 2rem;
 }
 
-.order-form{
+.order-form {
     padding-right: 2rem;
+}
+
+.product-description-text {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.checkout-product-bg {
+    max-width: 400px;
 }
