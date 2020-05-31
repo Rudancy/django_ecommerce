@@ -35,6 +35,7 @@ p {
     margin-top: 0.5rem;
     margin-right: 1rem;
     margin-left: 1rem;
+    padding-top: 1rem;
 }
 
 
@@ -85,15 +86,7 @@ p.text-justify {
 
 
 
-.product {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 18rem;
-    height: 20rem;
-    margin: 0 auto;
 
-}
 
 .product-info-text {
     padding-left: 3rem;
@@ -381,11 +374,11 @@ footer {
 .index-images {
     margin-top: 1rem;
     border-radius: 15px;
-    
-    
-    
-    
-    
+
+
+
+
+
 }
 
 .intro-text {
@@ -427,10 +420,15 @@ footer {
 }
 
 .product-description-text {
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .checkout-product-bg {
     max-width: 400px;
+}
+
+
+.styling {
+    color: blue;
 }
