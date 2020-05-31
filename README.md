@@ -1,3 +1,5 @@
+https://trainer-ecommerce.herokuapp.com/
+
 [![Build Status](https://travis-ci.org/Rudancy/django_ecommerce.svg?branch=master)](https://travis-ci.org/Rudancy/django_ecommerce)
 
 
