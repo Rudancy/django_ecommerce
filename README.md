@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Rudancy/django_ecommerce.svg?branch=master)](https://travis-ci.org/Rudancy/django_ecommerce)
+
+
 # Online Ecommerce Shop
 
 This project is about deploying a working ecommerce shop, I decided to focus my shop on selling retro trainers, this is a specialised shop that has the aim of providing only the best trainers for sale. 
